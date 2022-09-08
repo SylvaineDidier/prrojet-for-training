@@ -1,4 +1,4 @@
-package com.openclassrooms.testing.calcul.domain.model;
+package com.sildy.testing.calcul.domain.model;
 
 /**
  * A model to represent a two argument integer calculation which needs to be

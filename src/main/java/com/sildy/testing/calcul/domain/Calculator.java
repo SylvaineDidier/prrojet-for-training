@@ -1,4 +1,4 @@
-package com.openclassrooms.testing.calcul.domain;
+package com.sildy.testing.calcul.domain;
 
 import java.util.HashSet;
 import java.util.Set;

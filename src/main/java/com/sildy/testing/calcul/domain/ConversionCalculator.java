@@ -1,4 +1,4 @@
-package com.openclassrooms.testing.calcul.domain;
+package com.sildy.testing.calcul.domain;
 
 public class ConversionCalculator {
 

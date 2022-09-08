@@ -1,4 +1,4 @@
-package com.openclassrooms.testing.calcul.domain;
+package com.sildy.testing.calcul.domain;
 
 import static java.lang.Math.PI;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import com.openclassrooms.testing.calcul.domain.ConversionCalculator;
+import com.sildy.testing.calcul.domain.ConversionCalculator;
 
 @Tag("ConversionTests")
 @DisplayName("Réussir à convertir entre différentes unités.")

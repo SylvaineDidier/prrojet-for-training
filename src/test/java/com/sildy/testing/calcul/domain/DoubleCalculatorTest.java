@@ -1,8 +1,10 @@
-package com.openclassrooms.testing.calcul.domain;
+package com.sildy.testing.calcul.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import com.sildy.testing.calcul.domain.Calculator;
 
 public class DoubleCalculatorTest {
 	private Calculator calculatorUnderTest;

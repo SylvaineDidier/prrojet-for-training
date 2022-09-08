@@ -1,4 +1,4 @@
-package com.openclassrooms.testing.calcul.domain;
+package com.sildy.testing.calcul.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -25,6 +25,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import com.sildy.testing.calcul.domain.Calculator;
 
 @ExtendWith(LoggingExtension.class)
 public class CalculatorTest {

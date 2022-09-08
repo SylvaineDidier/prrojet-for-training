@@ -1,12 +1,14 @@
-package com.openclassrooms.testing.calcul.service;
+package com.sildy.testing.calcul.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-import com.openclassrooms.testing.calcul.domain.Calculator;
-import com.openclassrooms.testing.calcul.domain.model.CalculationModel;
-import com.openclassrooms.testing.calcul.domain.model.CalculationType;
+import com.sildy.testing.calcul.domain.Calculator;
+import com.sildy.testing.calcul.domain.model.CalculationModel;
+import com.sildy.testing.calcul.domain.model.CalculationType;
+import com.sildy.testing.calcul.service.CalculatorService;
+import com.sildy.testing.calcul.service.CalculatorServiceImpl;
 
 public class CalculatorServiceTest {
 

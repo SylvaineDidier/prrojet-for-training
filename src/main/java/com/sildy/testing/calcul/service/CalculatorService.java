@@ -1,6 +1,6 @@
-package com.openclassrooms.testing.calcul.service;
+package com.sildy.testing.calcul.service;
 
-import com.openclassrooms.testing.calcul.domain.model.CalculationModel;
+import com.sildy.testing.calcul.domain.model.CalculationModel;
 
 public interface CalculatorService {
 	/**
