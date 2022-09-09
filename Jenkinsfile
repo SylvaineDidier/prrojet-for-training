@@ -46,16 +46,21 @@ pipeline {
          }
       }
       
+      stage('Deploy'){
+         steps{
+            sh "mvn site:deploy"
+         }
+      }
       
+      site:deploy
       
 	stage('Code Coverage') {
         steps {
-            sh 'mvn cobertura:cobertura'
+            sh 'mvn site:deploy cobertura:cobertura'
         }
         
         post {
 	        always {
-	            junit '**/test-reports/*.xml'
 	            step([$class: 'CoberturaPublisher', autoUpdateHealth: true, autoUpdateStability: true, coberturaReportFile: '**/target/site/cobertura/*.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 2, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: true])
 	        }
 	    }
