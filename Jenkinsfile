@@ -10,11 +10,11 @@ pipeline {
       stage('Clone') {
          steps {
             checkout([$class: 'GitSCM',
-                branches: [[name: '*/mocks' ]],
+                branches: [[name: '*/master' ]],
                 extensions: scm.extensions,
                 userRemoteConfigs: [[
-                    url: $projetUrl,
-                    credentialsId: $identifiantGit
+                    url: 'https://github.com/SylvaineDidier/prrojet-for-training.git',
+                    credentialsId: '86ebefd1-279b-46f1-be3a-ca3094b4750d'
                 ]]
             ])
 
@@ -55,7 +55,7 @@ pipeline {
       
 	stage('Code Coverage') {
         steps {
-            sh 'mvn site:deploy cobertura:cobertura'
+            sh 'mvn site cobertura:cobertura'
         }
         
         post {
