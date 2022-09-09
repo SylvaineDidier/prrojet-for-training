@@ -42,11 +42,16 @@ pipeline {
       
       stage('Build'){
          steps{
-            sh "mvn -B -DskipTests clean package"
+            sh "mvn -B -DskipTests clean install"
          }
       }
       
-      
+       stage('SonarQube Analysis') {
+		    def mvn = tool 'mon_maven_auto';
+		    withSonarQubeEnv(installationName: 'Local SonarQube', credentialsId: 'sonarqube-token-for-jenkins') {
+		      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=form-Maven"
+		    }
+		  }
       
 	stage('Code Coverage') {
         steps {
