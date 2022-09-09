@@ -10,7 +10,7 @@ pipeline {
       stage('Clone') {
          steps {
             checkout([$class: 'GitSCM',
-                branches: [[name: '*/master' ]],
+                branches: [[name: '*/mocks' ]],
                 extensions: scm.extensions,
                 userRemoteConfigs: [[
                     url: $projetUrl,
