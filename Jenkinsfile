@@ -52,7 +52,6 @@ pipeline {
          }
       }
       
-      site:deploy
       
 	stage('Code Coverage') {
         steps {
