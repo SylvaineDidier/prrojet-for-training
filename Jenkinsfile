@@ -46,16 +46,11 @@ pipeline {
          }
       }
       
-      stage('Deploy'){
-         steps{
-            sh "mvn site"
-         }
-      }
       
       
 	stage('Code Coverage') {
         steps {
-            sh 'mvn site cobertura:cobertura'
+            sh 'mvn clean cobertura:cobertura'
         }
         
         post {
