@@ -46,12 +46,24 @@ pipeline {
          }
       }
       
-       stage('SonarQube Analysis') {
-		    def mvn = tool 'mon_maven_auto';
-		    withSonarQubeEnv(installationName: 'Local SonarQube', credentialsId: 'sonarqube-token-for-jenkins') {
-		      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=form-Maven"
-		    }
-		  }
+      stage('SonarQube analysis') {
+         environment {
+            SCANNER_HOME = tool 'sonarqube'
+         }
+         steps {
+               withSonarQubeEnv(installationName: 'Local SonarQube', credentialsId: 'sonarqube-token-for-jenkins') {
+                     sh '''$SCANNER_HOME/bin/sonar-scanner \
+                                          -Dsonar.login=$Login \
+                                          -Dsonar.password=$Password \
+                                          -Dsonar.projectKey=form-Maven \
+                                          -Dsonar.projectName=form Maven\
+                                          -Dsonar.sources=src/ \
+                                          -Dsonar.java.binaries=target/classes/ \
+                                          -Dsonar.exclusions=src/test/java/*/.java \
+                                          -Dsonar.projectVersion=${BUILD_NUMBER}-${GIT_COMMIT_SHORT}'''
+                  }
+         }
+      }
       
 	stage('Code Coverage') {
         steps {
